@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
         //1. basic loops
@@ -59,6 +61,25 @@ public class ControlFlowExercises {
 //                System.out.println(i + " Buzz");
 //            }
 //        }
+
+        //3. Display a table of Powers
+
+//        Scanner scanner = new Scanner(System.in);
+//        String cont;
+//        do {
+//            System.out.println("Enter an integer: ");
+//            int number1 = scanner.nextInt();
+//            System.out.println("Here is your table!");
+//            System.out.println("number | squared | cubed");
+//            System.out.println("------ | ------- | -----");
+//            for (int i = 1; i <= number1; i++) {
+//                int squared = i * i;
+//                int cubed = i * i * i;
+//                System.out.printf("%-6d | %-7d | %-6d\n", i, squared, cubed);
+//            }
+//            System.out.print("Would you like to continue? [yes / no] ");
+//            cont = scanner.next();
+//        } while (cont.equalsIgnoreCase("yes"));
 
 
     }
