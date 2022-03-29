@@ -32,10 +32,10 @@ public class ControlFlowExercises {
 //        } while (i >= -10);
 
 //        long i = 2;
-//        while(i <= 1_000_000){
-//            i = i * i;
+//        do{
 //            System.out.println(i);
-//        }
+//            i = i * i;
+//        }while(i < 1_000_000);
 
         //For Loop
 //        for (int i = 0; i <= 100; i+= 2){
@@ -82,29 +82,29 @@ public class ControlFlowExercises {
 //        } while (cont.equalsIgnoreCase("yes"));
 
         //4
-        Scanner scanGrades = new Scanner(System.in);
-
-        String cont;
-        do{
-            System.out.println("Enter your grade:");
-            int grade = scanGrades.nextInt();
-//            System.out.println(grade);
-            if(grade >= 88 && grade <= 100 ){
-                System.out.println("Grade: A");
-            }else if(grade >= 80 && grade <= 87){
-                System.out.println("Grade: B");
-            }else if(grade >= 67 && grade <= 79) {
-                System.out.println("Grade: C");
-            }else if(grade >= 60 && grade <= 66) {
-                System.out.println("Grade: D");
-            }else if(grade >= 0 && grade <= 59) {
-                System.out.println("Grade: F");
-            }else if(grade > 100 || grade < 0){
-                System.out.println("Invalid");
-            }
-            System.out.println("Would you like to continue? [yes / no]");
-            cont = scanGrades.next();
-        } while(cont.equalsIgnoreCase("yes"));
+//        Scanner scanGrades = new Scanner(System.in);
+//        String cont;
+//
+//        do{
+//           System.out.println("Enter your grade:");
+//            int grade = scanGrades.nextInt();
+////            System.out.println(grade);
+//            if(grade >= 88 && grade <= 100 ){
+//                System.out.println("Grade: A");
+//            }else if(grade >= 80 && grade <= 87){
+//                System.out.println("Grade: B");
+//            }else if(grade >= 67 && grade <= 79) {
+//                System.out.println ("Grade: C");
+//            }else if(grade >= 60 && grade <= 66) {
+//                System.out.println("Grade: D");
+//            }else if(grade >= 0 && grade <= 59) {
+//                System.out.println("Grade: F");
+//            }else {
+//                System.out.println("Invalid");
+//            }
+//            System.out.println("Would you like to continue? [yes / no]");
+//            cont = scanGrades.next();
+//        } while(cont.equalsIgnoreCase("yes"));
 
     }
 }
