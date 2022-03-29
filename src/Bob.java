@@ -15,12 +15,12 @@ public class Bob {
                 System.out.println(question);
             } else if(talk.endsWith("!")){
                 System.out.println(yell);
-            } else if(talk.endsWith(" ")){
+            } else if(talk.isEmpty()){
                 System.out.println(address);
             } else{
                 System.out.println("Whatever");
             }
-        }while(talk.endsWith("?") || talk.endsWith("!") ||talk.endsWith(""));
+        }while(true);
 
     }
 }
