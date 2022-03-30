@@ -1,5 +1,6 @@
-import javax.print.MultiDocPrintService;
+import java.util.Random;
 import java.util.Scanner;
+
 
 public class MethodsExercises {
     public static void main(String[] args){
@@ -15,11 +16,22 @@ public class MethodsExercises {
         //d.
 //        modulus(4, 2);
 //        modulus(3, 2);
+
+        //2
 //        System.out.print("Enter a number between 1 and 10: ");
 //        System.out.println(getInteger(1, 10));
 
-        System.out.println("Enter number between 1 and 10:");
-        getFactorials();
+        //3
+//        System.out.println("Enter number between 1 and 10:");
+//        getFactorials();
+
+        //4. Create an application that simulates dice rolling.
+        System.out.println("Welcome to the dice game");
+        System.out.println("------------------------");
+        System.out.println("Enter number of dice sides:");
+        Scanner sc =new Scanner(System.in);
+        int sides = sc.nextInt();
+        diceGame(sides);
 
     }
 
@@ -72,21 +84,43 @@ public class MethodsExercises {
 
     //3
 
-        public static int getFactorials() {
-            Scanner sc =new Scanner(System.in);
-            int i;
-            int factorial = 1;
-            int userInput = sc.nextInt();
-            if(userInput >= 1 && userInput <=10){
-                for(i =1; i <= userInput; i++){
-                    factorial = factorial * i;
-                }
-                System.out.println(factorial);
-                return factorial;
-            }
-            System.out.println("[Invalid Number]");
-            System.out.println("Enter number between 1 and 10:");
-            return getFactorials();
-        }
+//        public static int getFactorials() {
+//            Scanner sc =new Scanner(System.in);
+//            int i;
+//            int factorial = 1;
+//            int userInput = sc.nextInt();
+//            if(userInput >= 1 && userInput <=10){
+//                for(i =1; i <= userInput; i++){
+//                    factorial = factorial * i;
+//                }
+//                System.out.println(factorial);
+//                return factorial;
+//            }
+//            System.out.println("[Invalid Number]");
+//            System.out.println("Enter number between 1 and 10:");
+//            return getFactorials();
+//        }
+
+    //4. Create an application that simulates dice rolling.
+    public static int generateRandomNumber(int sides){
+        Random rand = new Random();
+        int upperbound = sides;
+        int lowerBound = 1;
+        int int_random = rand.nextInt(upperbound + 1 - lowerBound) + lowerBound;
+//        System.out.println(int_random);
+        return int_random;
+    }
+
+    public static void diceGame(int num){
+    Scanner sc =new Scanner(System.in);
+    String userInput;
+        do{
+            System.out.println("Dice 1: " + generateRandomNumber(num));
+            System.out.println("Dice 2: " + generateRandomNumber(num));
+            System.out.println("Do you want to roll again? [YES / NO]");
+            userInput = sc.next();
+
+        } while(userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y"));
+    }
 
 }
