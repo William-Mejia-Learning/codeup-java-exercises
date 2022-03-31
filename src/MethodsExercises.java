@@ -26,12 +26,12 @@ public class MethodsExercises {
 //        getFactorials();
 
         //4. Create an application that simulates dice rolling.
-        System.out.println("Welcome to the dice game");
-        System.out.println("------------------------");
-        System.out.println("Enter number of dice sides:");
-        Scanner sc =new Scanner(System.in);
-        int sides = sc.nextInt();
-        diceGame(sides);
+//        System.out.println("Welcome to the dice game");
+//        System.out.println("------------------------");
+//        System.out.println("Enter number of dice sides:");
+//        Scanner sc =new Scanner(System.in);
+//        int sides = sc.nextInt();
+//        diceGame(sides);
 
     }
 
@@ -102,25 +102,26 @@ public class MethodsExercises {
 //        }
 
     //4. Create an application that simulates dice rolling.
-    public static int generateRandomNumber(int sides){
-        Random rand = new Random();
-        int upperbound = sides;
-        int lowerBound = 1;
-        int int_random = rand.nextInt(upperbound + 1 - lowerBound) + lowerBound;
-//        System.out.println(int_random);
-        return int_random;
-    }
+//    public static int generateRandomNumber(int sides){
+//        Random rand = new Random();
+//        int upperbound = sides;
+//        int lowerBound = 1;
+//        int int_random = rand.nextInt(upperbound + 1 - lowerBound) + lowerBound;
+////        System.out.println(int_random);
+//        return int_random;
+//    }
+//
+//    public static void diceGame(int num){
+//    Scanner sc =new Scanner(System.in);
+//    String userInput;
+//        do{
+//            System.out.println("Dice 1: " + generateRandomNumber(num));
+//            System.out.println("Dice 2: " + generateRandomNumber(num));
+//            System.out.println("Do you want to roll again? [YES / NO]");
+//            userInput = sc.next();
+//
+//        } while(userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y"));
+//    }
 
-    public static void diceGame(int num){
-    Scanner sc =new Scanner(System.in);
-    String userInput;
-        do{
-            System.out.println("Dice 1: " + generateRandomNumber(num));
-            System.out.println("Dice 2: " + generateRandomNumber(num));
-            System.out.println("Do you want to roll again? [YES / NO]");
-            userInput = sc.next();
-
-        } while(userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y"));
-    }
 
 }
