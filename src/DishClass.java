@@ -1,5 +1,7 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.Locale;
+
 class Dish {
     private int costInCents;
     private String nameOfDish;
@@ -29,24 +31,16 @@ class Dish {
         return wouldRecommend;
     }
 
-    public static int getTotalDishes() {
-        return totalDishes;
-    }
-
     public void setCostInCents(int costInCents) {
         this.costInCents = costInCents;
     }
 
-//    public void setNameOfDish(String nameOfDish) {
-//        this.nameOfDish = nameOfDish;
-//    }
+    public void setNameOfDish(String nameOfDish) {
+        this.nameOfDish = nameOfDish;
+    }
 
     public void setWouldRecommend(boolean wouldRecommend) {
         this.wouldRecommend = wouldRecommend;
-    }
-
-    public static void setTotalDishes(int totalDishes) {
-        Dish.totalDishes = totalDishes;
     }
 
     public void printSummary() {
@@ -58,31 +52,56 @@ class Dish {
 }
 
 class DishTools {
+    static final int AVG_COST_OF_DISH_IN_CENT = 13000;
 
-    public static int shoutDishName(String string) {
-
-
-        return 0;
+    public static void shoutDishNAme(Dish dish){
+        System.out.println(dish.getNameOfDish().toUpperCase());
     }
 
-}
+    public static void analyzeDishCost(Dish dish){
+        String moreOrLess = (dish.getCostInCents() > AVG_COST_OF_DISH_IN_CENT) ? "More" : "Less";
+
+        System.out.println(moreOrLess + " expensive than average");
+    }
+
+    public static void flipRecommendation(Dish dish){
+        dish.setWouldRecommend(!dish.isWouldRecommend());
+
+    }
+
+    }
+
+
 
 
 public class DishClass {
     public static void main(String[] args) {
         Dish dish1 = new Dish();
-        DishTools dish2 = new DishTools();
-//        dish2.getNameOfDish();
 //
-        System.out.println("dish1.printSummary() = " + dish1);
-//
-//        dish1.setCostInCents(100);
-//        dish1.setNameOfDish("Pizza pie");
-//        dish1.setWouldRecommend(true);
-//
-//        dish1.printSummary();
+//        System.out.println("dish1.printSummary() = " + dish1);
 
-//        System.out.println(shoutDishName());
+        dish1.setCostInCents(100);
+        dish1.setNameOfDish("Pizza pie");
+        dish1.setWouldRecommend(true);
+
+
+        DishTools.analyzeDishCost(dish1);
+
+        DishTools.shoutDishNAme(dish1);
+        DishTools.flipRecommendation(dish1);
+        dish1.printSummary();
+
+        Dish dish2 = new Dish(10000, "California Roll", false);
+
+        DishTools.analyzeDishCost(dish2);
+
+        DishTools.shoutDishNAme(dish2);
+        dish2.printSummary();
+        DishTools.flipRecommendation(dish2);
+//        System.out.println("dish2 = " + dish2);
+        DishTools.shoutDishNAme(dish2);
+        dish2.printSummary();
+
 
 
     }
