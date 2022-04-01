@@ -1,16 +1,20 @@
-class Dish{
-   private int costInCents;
-   private String nameOfDish;
-   private boolean wouldRecommend;
-   public static int totalDishes = 0;
+import org.w3c.dom.ls.LSOutput;
 
-   public Dish(){ totalDishes++; }
+class Dish {
+    private int costInCents;
+    private String nameOfDish;
+    private boolean wouldRecommend;
+    public static int totalDishes = 0;
 
-    public Dish(int cost, String name, boolean recommend){
-       this();
-       this.costInCents = cost;
-       this.nameOfDish = name;
-       this.wouldRecommend = recommend;
+    public Dish() {
+        totalDishes++;
+    }
+
+    public Dish(int cost, String name, boolean recommend) {
+        this();
+        this.costInCents = cost;
+        this.nameOfDish = name;
+        this.wouldRecommend = recommend;
     }
 
     public int getCostInCents() {
@@ -18,7 +22,7 @@ class Dish{
     }
 
     public String getNameOfDish() {
-        return nameOfDish;
+        return this.nameOfDish;
     }
 
     public boolean isWouldRecommend() {
@@ -33,9 +37,9 @@ class Dish{
         this.costInCents = costInCents;
     }
 
-    public void setNameOfDish(String nameOfDish) {
-        this.nameOfDish = nameOfDish;
-    }
+//    public void setNameOfDish(String nameOfDish) {
+//        this.nameOfDish = nameOfDish;
+//    }
 
     public void setWouldRecommend(boolean wouldRecommend) {
         this.wouldRecommend = wouldRecommend;
@@ -45,32 +49,41 @@ class Dish{
         Dish.totalDishes = totalDishes;
     }
 
-    public void printSummary(){
+    public void printSummary() {
         System.out.printf("Cost: %d \nName: %s\nRecommended: %b\n", costInCents, nameOfDish, wouldRecommend);
-        System.out.println("Total Dishes: " + totalDishes +"\n");
-        System.out.printf("%s\n","---------------------");
+        System.out.println("Total Dishes: " + totalDishes + "\n");
+        System.out.printf("%s\n", "---------------------");
     }
 
+}
+
+class DishTools {
+
+    public static int shoutDishName(String string) {
+
+
+        return 0;
     }
 
-    class DishTools{
-    int AVG_COST_OF_DISH_IN_CENTS = 13_000;
-
-
-    }
+}
 
 
 public class DishClass {
     public static void main(String[] args) {
         Dish dish1 = new Dish();
-
+        DishTools dish2 = new DishTools();
+//        dish2.getNameOfDish();
+//
         System.out.println("dish1.printSummary() = " + dish1);
+//
+//        dish1.setCostInCents(100);
+//        dish1.setNameOfDish("Pizza pie");
+//        dish1.setWouldRecommend(true);
+//
+//        dish1.printSummary();
 
-        dish1.setCostInCents(100);
-        dish1.setNameOfDish("Pizza pie");
-        dish1.setWouldRecommend(true);
+//        System.out.println(shoutDishName());
 
-        dish1.printSummary();
 
     }
 }
