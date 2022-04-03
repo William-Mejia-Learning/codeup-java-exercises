@@ -1,3 +1,5 @@
+package util;
+
 import util.Input;
 
 public class InputTest {
@@ -9,7 +11,7 @@ public class InputTest {
 //        System.out.println("[YES / NO]");
 //        System.out.println(input.yesNo());
 //        System.out.println("Input Number from 1 -10");
-//        System.out.println(input.getInt(1, 10));
+//        System.out.println(input.getInt(1,10));
 
 //        System.out.println("Input an integer from 1 -10");
 //        System.out.println(input.getInt());
@@ -17,7 +19,7 @@ public class InputTest {
 //        System.out.println("Input a double from 1 -10");
 //        System.out.println(input.getDouble(1, 10));
 
-        System.out.println("Input a double from 1 -10");
-        System.out.println(input.getDouble());
+//        System.out.println("Input a double from 1 -10");
+        System.out.println(input.getDouble(1, 7.898989));
     }
 }

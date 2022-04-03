@@ -18,42 +18,92 @@ public class Input {
         return false;
     }
 
-    public int getInt(int min, int max){
-        int answer;
-        do{
-            answer = scanner.nextInt();
+//    public boolean YesNo(String prompt){
+//        System.out.println(prompt);
+//        return YesNo();
+//    }
 
-        }while(answer < 0 || answer > 10);
-        return answer;
-    }
+//    public int getInt(int min, int max){
+//        int answer;
+//        do{
+//            answer = scanner.nextInt();
+//
+//        }while(answer < 0 || answer > 10);
+//        return answer;
+//    }
+
+//    public int getInt(){
+//        int min = 1;
+//        int max = 10;
+//        int answer;
+//        do{
+//            answer = scanner.nextInt();
+//
+//        }while(answer < min || answer > max);
+//        return answer;
+//    }
 
     public int getInt(){
-        int min = 1;
-        int max = 10;
-        int answer;
-        do{
-            answer = scanner.nextInt();
-
-        }while(answer < 0 || answer > 10);
-        return answer;
+        try {
+            int inputInt = scanner.nextInt();
+            return inputInt;
+        } catch(Exception e){
+            System.out.println("MUST enter a valid integer: ");
+            scanner.nextLine();
+            return getInt();
+        }
     }
 
+    public int getInt(int min, int max){
+        System.out.println("Enter input between " + min +" and " + max);
 
-    public double getDouble(double min, double max){
-        double answer;
-        do{
-            answer = scanner.nextDouble();
+        int userInt = getInt();
 
-        }while(answer < 0 || answer > 10);
-        return answer;
+        if(userInt > max || userInt < min){
+            return getInt(min, max);
+        }
+        return userInt;
     }
+
+//    public double getDouble(double min, double max){
+//        double answer;
+//        do{
+//            answer = scanner.nextDouble();
+//
+//        }while(answer < 0 || answer > 10);
+//        return answer;
+//    }
 
     public double getDouble(){
-        double answer;
-        do{
-            answer = scanner.nextDouble();
-
-        }while(answer < 0 || answer > 10);
-        return answer;
+        try{
+            double userInput = scanner.nextDouble();
+            return userInput;
+        } catch (Exception e){
+            System.out.println("Must enter a valid number: ");
+            scanner.nextLine();
+            return getDouble();
+        }
     }
+
+    public double getDouble(double min, double max){
+        System.out.println("Enter input between " + min +" and " + max);
+
+        double userInput = getDouble();
+
+        if(userInput > max || userInput < min){
+            return getDouble(min, max);
+        }
+        return userInput;
+    }
+
+
+
+//    public double getDouble(){
+//        double answer;
+//        do{
+//            answer = scanner.nextDouble();
+//
+//        }while(answer < 0 || answer > 10);
+//        return answer;
+//    }
 }
